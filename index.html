@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do list</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Lista de <span>Tarefas</span></h1>
+    </header>
+    <main class="container">
+    <form id="cadastro">
+        <input type="text" 
+        name="texto-input" 
+        id="texto-input" 
+        placeholder="digite sua nova tarefa"
+        >
+        <button id="adicionar"> Adciconar tarefa </button>
+    </form>
+    <div id="tarefas">
+        <ul>
+            <li>
+                tarefa 1
+                <div>
+                    <button class=".excluir"><img src="./imagens/icons8-excluir-48.png" alt="botao excluir"></button>
+                    <button class="concluir"><img src="./imagens/icons8-tarefa-concluída-48.png" alt=""></button>
+                </div>
+            </li>
+            <li>
+                tarefa 2
+                <div>
+                    <button class=".excluir"><img src="./imagens/icons8-excluir-48.png" alt=""></button>
+                    <button class="concluir"><img src="./imagens/icons8-tarefa-concluída-48.png"alt=></button>
+                </div>
+            </li>
+        </ul>
+    </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
