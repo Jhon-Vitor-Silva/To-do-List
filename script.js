@@ -4,24 +4,45 @@
 btnAdicionar.addEventListener('click', (evento)=>{
     evento.preventDefault();
 
-     const tarefa =  criarTarefa(valorTarefa.value)
+    if (valorTarefa.value == ''){
+        alert('Digite uma terafa')
+    } else {
+        const tarefa = criarTarefa(valorTarefa.value)
+        renderizarTarefa(tarefa)
+    }
 
- valorTarefa.value = ''
+    valorTarefa.value = ''
 
-renderizarTarefa(tarefa)
+    
+
 })
+const listaTarefas = document.querySelector('ul')
 
+    listaTarefas.addEventListener('click',(elemento) =>{
+
+        const itemClicado = elemento.target
+
+        console.log(itemClicado.classList.contains('excluir'))
+
+        if (itemClicado.classList.contains('excluir')){
+            itemClicado.parentElement.parentElement.remove()
+        }
+        if (itemClicado.classList.contains('concluir')){
+            itemClicado.parentElement.parentElement.firstChild.classList.toggle('concluido')
+        }
+    })
 function criarTarefa (valorarefa){
     //const listaTarefas = document.querySelector('ul')
 
     const li = document.createElement('li')
 
-    li.innerHTML = `
-    ${valorarefa}
+
+    li.innerHTML = `<p>
+    ${valorarefa}</p>
     <div>
-    <button class=".excluir"><img src="./imagens/icons8-excluir-48.png" alt="botao excluir"></button>
-    <button class="concluir"><img src="./imagens/icons8-tarefa-concluída-48.png" alt=""></button>
-</div>`
+    <button class="excluir"></button>
+    <button class="concluir"></button>
+    </div>`
 
   return li
 }
